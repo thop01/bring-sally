@@ -10,9 +10,14 @@
 
 <div class="example-wrapper">
     <h1 class="fs-1">Hello {{ controller_name }}! ✅</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.save) }}
+    {{ form_end(form) }}
     <ul>
         {% for sally in sallies %}
-            <li>{{ sally.title }}</li>
+            <li>{{ sally.name| capitalize  }}</li>
         {% endfor %}
     </ul>
     This friendly message is coming from:
